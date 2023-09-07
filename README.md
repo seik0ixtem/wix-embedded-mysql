@@ -1,5 +1,24 @@
 # Wix Embedded MySql [![Build Status (Travis: Linux/OSX)](https://img.shields.io/travis/wix/wix-embedded-mysql/master.svg?label=linux%2FOSX%20build)](https://travis-ci.org/wix/wix-embedded-mysql) [![Build Status (AppVeyor: Windows)](https://img.shields.io/appveyor/ci/viliusl/wix-embedded-mysql/master.svg?label=windows%20build)](https://ci.appveyor.com/project/viliusl/wix-embedded-mysql) [![Maven Central](https://img.shields.io/maven-central/v/com.wix/wix-embedded-mysql.svg)](http://mvnrepository.com/artifact/com.wix/wix-embedded-mysql)
 
+## Fork notes.
+
+1. Aim of fork - make this thing work on Windows (10-11-20...) with mysql 8x
+2. I managed to start mysqld 8 on windows with adding those files to unpacked mysql dir:
+   * ssleay32.dll - part of openSSL distribution (https://indy.fulgan.com/SSL/)
+   * libeay32.dll - part of openSSL distribution (https://indy.fulgan.com/SSL/) 
+   * libssl-1_1-x64.dll - part of mysql server distribution (https://downloads.mysql.com/archives/community/)
+   * libprotobuf-lite.dll - part of mysql server distribution (https://downloads.mysql.com/archives/community/)
+   * libcrypto-1_1-x64.dll - part of mysql server distribution (https://downloads.mysql.com/archives/community/)
+
+    mysql is unpacked like [[USER_HOME]]\.embedmysql\extracted\Windows-B64--\MySQL-8.0\mysql-8.0.18\bin\, 
+ so i just copy-pasted libs here.
+
+3. tried adding all those libs in PATH, but no luck.
+4. also, can't build this project without disabling tests yet. But I need to save worlds, so it's later to fix.
+5. once fixed with tests I would be able to release. Keep subscribed, people.
+6. yeah, next step is to make it work from box. Maybe someday.
+7. spending time here because my windows fails to start with enabled virtualization and I can't use test-containers.
+
 **[DEPRECATED]** - mostly due to substantial changes in packaging between version changes and emergence of new and better ways to run embedded mysql. Please check-out [Testcontainers](https://www.testcontainers.org/) as a better alternative.
 
 ## Why?
