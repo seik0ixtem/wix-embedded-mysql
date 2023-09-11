@@ -10,7 +10,7 @@
    * libprotobuf-lite.dll - part of mysql server distribution (https://downloads.mysql.com/archives/community/)
    * libcrypto-1_1-x64.dll - part of mysql server distribution (https://downloads.mysql.com/archives/community/)
 
-    mysql is unpacked like [[USER_HOME]]\.embedmysql\extracted\Windows-B64--\MySQL-8.0\mysql-8.0.18\bin\, 
+    mysql is unpacked like [[USER_HOME]]\\\.embedmysql\extracted\Windows-B64--\MySQL-8.0\mysql-8.0.18\bin\, 
  so i just copy-pasted libs here.
 
 3. tried adding all those libs in PATH, but no luck.
